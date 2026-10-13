@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ISUFST - Campus Leadership Circle</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --rose-gold: #b76e79;
+            --dusty-rose: #d4a5ab;
+            --champagne: #f9f4f1;
+            --pearl: #ffffff;
+            --gold-leaf: #c5a059;
+            --soft-charcoal: #3d3d3d;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #f5e3e6 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: var(--soft-charcoal);
+        }
+
+
+        /* =========================================
+           HEADER
+           ========================================= */
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(183, 110, 121, 0.2);
+        }
+
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--rose-gold);
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+
+        .sub {
+            letter-spacing: 5px;
+            font-size: 0.85em;
+            color: var(--dusty-rose);
+            text-transform: uppercase;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+
+        .content-container {
+            padding: 40px 20px;
+            max-width: 1300px;
+            margin: auto;
+        }
+
+
+        /* =========================================
+           SECTION HEADINGS
+           ========================================= */
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            color: var(--rose-gold);
+            margin-top: 120px;
+            margin-bottom: 50px;
+            font-size: 2.8em;
+        }
+
+
+        h2::after {
+            content: '✧';
+            display: block;
+            font-size: 0.4em;
+            color: var(--gold-leaf);
+            margin-top: 10px;
+        }
+
+
+        /* =========================================
+           LEADERSHIP CARDS
+           ========================================= */
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+        }
+
+
+        .card {
+            background: var(--pearl);
+            border-radius: 30px 30px 5px 5px;
+            width: 380px;
+            max-width: 100%;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(183, 110, 121, 0.08);
+            border: 1px solid rgba(183, 110, 121, 0.1);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(
+                90deg,
+                #f4dcd6,
+                var(--rose-gold),
+                var(--gold-leaf)
+            );
+        }
+
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(183, 110, 121, 0.15);
+        }
+
+
+        .card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--champagne);
+            margin-bottom: 25px;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+
+        .name {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--soft-charcoal);
+            font-size: 1.6em;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+
+        .title {
+            color: var(--gold-leaf);
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+
+        .description-box {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--dusty-rose);
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.8;
+            text-align: justify;
+            width: 100%;
+            font-weight: 300;
+        }
+
+
+        .tag {
+            display: inline-block;
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 0.65em;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: white;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .tag-univ {
+            background: var(--gold-leaf);
+        }
+
+
+        .tag-camp {
+            background: #9b7a5b;
+        }
+
+
+        .tag-dean {
+            background: #8e6c88;
+        }
+
+
+        .tag-faculty {
+            background: #7a84a5;
+        }
+
+
+        .tag-staff {
+            background: #a57a7a;
+        }
+
+
+        /* =========================================
+           ACQUAINTANCE PARTY
+           ========================================= */
+
+        .party-section {
+            margin-top: 140px;
+            scroll-margin-top: 30px;
+        }
+
+
+        .party-intro {
+            max-width: 900px;
+            margin: -20px auto 60px;
+            text-align: center;
+            line-height: 1.9;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+
+        .party-intro strong {
+            color: var(--rose-gold);
+            font-size: 1.1em;
+        }
+
+
+        .party-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2em;
+            color: var(--rose-gold);
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+
+        .party-title::after {
+            content: '✧';
+            display: block;
+            font-size: 0.5em;
+            color: var(--gold-leaf);
+            margin-top: 8px;
+        }
+
+
+        .day-label {
+            display: inline-block;
+            padding: 7px 20px;
+            border-radius: 50px;
+            background: var(--rose-gold);
+            color: white;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+
+        .day-heading {
+            text-align: center;
+            margin: 60px 0 15px;
+        }
+
+
+        .day-heading .day-label {
+            background: var(--gold-leaf);
+        }
+
+
+        /* =========================================
+           CONSISTENT PHOTO GALLERY
+           ========================================= */
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            margin-bottom: 65px;
+            align-items: stretch;
+        }
+
+
+        .photo-card {
+            background: var(--pearl);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 15px 35px rgba(183, 110, 121, 0.10);
+            border: 1px solid rgba(183, 110, 121, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .photo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(183, 110, 121, 0.18);
+        }
+
+
+        .photo-card img {
+            width: 100%;
+            height: 270px;
+            min-height: 270px;
+            max-height: 270px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+            display: block;
+            background: var(--champagne);
+            transition: transform 0.4s ease;
+        }
+
+
+        .photo-card:hover img {
+            transform: scale(1.02);
+        }
+
+
+        .photo-caption {
+            text-align: center;
+            padding: 16px 8px 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35em;
+            font-weight: 600;
+            color: var(--soft-charcoal);
+        }
+
+
+        .photo-subcaption {
+            text-align: center;
+            font-size: 0.75em;
+            color: var(--dusty-rose);
+            letter-spacing: 1px;
+            padding-bottom: 8px;
+        }
+
+
+        .party-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                #f4dcd6,
+                var(--gold-leaf),
+                var(--rose-gold)
+            );
+            margin: 90px auto;
+            border: none;
+        }
+
+
+        /* =========================================
+           FIELD DEMONSTRATION WINNERS
+           ========================================= */
+
+        .winner-title {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            color: var(--gold-leaf);
+            font-size: 1.8em;
+            margin: 10px 0 35px;
+            font-weight: 600;
+        }
+
+
+        .winner-title::after {
+            content: '✧';
+            display: block;
+            font-size: 0.5em;
+            color: var(--rose-gold);
+            margin-top: 8px;
+        }
+
+
+        .winner-card {
+            background: var(--pearl);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 15px 35px rgba(183, 110, 121, 0.10);
+            border: 1px solid rgba(183, 110, 121, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .winner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(183, 110, 121, 0.18);
+        }
+
+
+        .winner-card img {
+            width: 100%;
+            height: 270px;
+            min-height: 270px;
+            max-height: 270px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+            display: block;
+            background: var(--champagne);
+        }
+
+
+        .winner-caption {
+            text-align: center;
+            padding: 18px 8px 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.45em;
+            font-weight: 600;
+            color: var(--rose-gold);
+        }
+
+
+        .winner-subcaption {
+            text-align: center;
+            font-size: 0.75em;
+            color: var(--dusty-rose);
+            letter-spacing: 1px;
+            padding-bottom: 10px;
+        }
+
+
+        /* =========================================
+           CHAMPION ON TOP
+           ========================================= */
+
+        .champion-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+
+        .champion-card {
+            width: 380px;
+            max-width: 100%;
+        }
+
+
+        /* =========================================
+           1ST, 2ND AND 3RD PLACE
+           ========================================= */
+
+        .winner-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            margin-bottom: 65px;
+            align-items: stretch;
+        }
+
+
+        /* =========================================
+           TEAM BUILDING - 2 X 2
+           ========================================= */
+
+        .team-building-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            margin-bottom: 65px;
+            align-items: stretch;
+        }
+
+
+        /* =========================================
+           BASTA IT, QUALITY
+           ========================================= */
+
+        .quality-section {
+            margin-top: 70px;
+        }
+
+
+        .quality-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto 70px;
+            align-items: stretch;
+        }
+
+
+        .quality-card {
+            background: var(--pearl);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 15px 35px rgba(183, 110, 121, 0.10);
+            border: 1px solid rgba(183, 110, 121, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .quality-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(183, 110, 121, 0.18);
+        }
+
+
+        /* Same image sizing as the other galleries */
+
+        .quality-card img {
+            width: 100%;
+            height: 270px;
+            min-height: 270px;
+            max-height: 270px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+            display: block;
+            background: var(--champagne);
+            transition: transform 0.4s ease;
+        }
+
+
+        .quality-card:hover img {
+            transform: scale(1.02);
+        }
+
+
+        .quality-caption {
+            text-align: center;
+            padding: 18px 8px 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.55em;
+            font-weight: 600;
+            color: var(--rose-gold);
+        }
+
+
+        .quality-subcaption {
+            text-align: center;
+            font-size: 0.75em;
+            color: var(--dusty-rose);
+            letter-spacing: 1px;
+            padding-bottom: 8px;
+        }
+
+
+        /* =========================================
+           PHOTO CREDIT
+           ========================================= */
+
+        .photo-credit {
+            text-align: center;
+            margin: 80px auto 20px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(183, 110, 121, 0.2);
+            color: #999;
+            font-size: 0.75em;
+            letter-spacing: 1px;
+        }
+
+
+        .photo-credit strong {
+            color: var(--rose-gold);
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--dusty-rose);
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 2;
+        }
+
+
+        /* =========================================
+           ANIMATION
+           ========================================= */
+
+        @keyframes slideUp {
+
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================================
+           TABLET
+           ========================================= */
+
+        @media (max-width: 900px) {
+
+            .photo-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+
+            .winner-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+
+            .team-building-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+
+            .quality-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+
+            .card {
+                width: 340px;
+            }
+
+
+            h1 {
+                font-size: 2.8em;
+            }
+
+
+            .sub {
+                letter-spacing: 3px;
+                line-height: 1.8;
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 55px 18px;
+            }
+
+
+            h1 {
+                font-size: 2.3em;
+            }
+
+
+            .sub {
+                font-size: 0.7em;
+                letter-spacing: 2px;
+            }
+
+
+            .content-container {
+                padding: 20px 15px;
+            }
+
+
+            h2 {
+                font-size: 2.2em;
+                margin-top: 80px;
+                margin-bottom: 35px;
+            }
+
+
+            .grid {
+                gap: 30px;
+            }
+
+
+            .card {
+                width: 100%;
+                padding: 35px 22px;
+            }
+
+
+            .party-section {
+                margin-top: 90px;
+            }
+
+
+            .party-title {
+                font-size: 1.7em;
+                margin-top: 50px;
+            }
+
+
+            /* One column on mobile */
+
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 45px;
+            }
+
+
+            .winner-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 45px;
+            }
+
+
+            .team-building-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 45px;
+            }
+
+
+            .quality-gallery {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 45px;
+            }
+
+
+            /* Consistent mobile image size */
+
+            .photo-card img,
+            .winner-card img,
+            .quality-card img {
+                height: 300px;
+                min-height: 300px;
+                max-height: 300px;
+            }
+
+
+            .champion-card {
+                width: 100%;
+            }
+
+
+            .party-intro {
+                font-size: 0.85em;
+            }
+
+
+            footer {
+                padding: 65px 20px;
+                font-size: 0.7em;
+            }
+
+        }
+
+    
+
+        /* =========================================
+           MASCULINE / MODERN DESIGN OVERRIDES
+           Navy, graphite, steel blue, and clean typography
+           ========================================= */
+        :root {
+            --rose-gold: #23466b;
+            --dusty-rose: #8da8c2;
+            --champagne: #e9eef4;
+            --pearl: #ffffff;
+            --gold-leaf: #b58b45;
+            --soft-charcoal: #172536;
+            --glass: rgba(248, 250, 252, 0.94);
+            --ink: #172536;
+            --slate: #526579;
+            --line: #d7e0e9;
+            --deep-navy: #10243a;
+            --steel-blue: #23466b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #edf1f5;
+            background-image: linear-gradient(180deg, #f7f9fb 0%, #e7edf3 100%);
+            background-attachment: fixed;
+            color: var(--ink);
+            line-height: 1.65;
+        }
+
+        header {
+            padding: 76px 20px 70px;
+            background: linear-gradient(135deg, #10243a 0%, #23466b 65%, #315b7f 100%);
+            color: #fff;
+            border-bottom: 5px solid var(--gold-leaf);
+            backdrop-filter: none;
+        }
+
+        h1, h2, .party-title, .winner-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: clamp(2.7rem, 6vw, 4.4rem);
+            line-height: 1.05;
+            letter-spacing: 2.5px;
+        }
+
+        .sub {
+            color: #d5e0eb;
+            font-size: 0.78rem;
+            letter-spacing: 3px;
+            line-height: 1.8;
+        }
+
+        .content-container {
+            max-width: 1320px;
+            padding: 35px 24px;
+        }
+
+        h2 {
+            color: var(--deep-navy);
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-top: 90px;
+            margin-bottom: 42px;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 4px;
+            background: var(--gold-leaf);
+            margin: 14px auto 0;
+        }
+
+        .grid {
+            gap: 28px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            width: 360px;
+            padding: 34px 28px;
+            box-shadow: 0 12px 30px rgba(16, 36, 58, 0.09);
+            border: 1px solid #dce4ec;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card::before {
+            height: 5px;
+            background: linear-gradient(90deg, #10243a, #315b7f, #b58b45);
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 18px 38px rgba(16, 36, 58, 0.15);
+        }
+
+        .card img {
+            border-radius: 8px;
+            border: 4px solid #e5ebf1;
+            padding: 3px;
+            box-shadow: 0 8px 18px rgba(16, 36, 58, 0.12);
+        }
+
+        .name {
+            font-family: 'Inter', sans-serif;
+            color: var(--deep-navy);
+            font-size: 1.12rem;
+            font-weight: 700;
+            letter-spacing: -0.25px;
+            line-height: 1.45;
+        }
+
+        .title {
+            color: #9a722e;
+            font-size: 0.76rem;
+            letter-spacing: 1.15px;
+            font-weight: 700;
+        }
+
+        .description-box {
+            border-top: 1px solid var(--line);
+            color: #526172;
+            font-size: 0.88rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .tag {
+            border-radius: 4px;
+            letter-spacing: 1.2px;
+            box-shadow: none;
+            padding: 6px 13px;
+        }
+
+        .tag-univ { background: #23466b; }
+        .tag-camp { background: #3e5a70; }
+        .tag-dean { background: #53677c; }
+        .tag-faculty { background: #687d91; }
+        .tag-staff { background: #8b6c37; }
+
+        .party-section {
+            margin-top: 100px;
+        }
+
+        .party-intro {
+            color: #526172;
+            font-size: 0.94rem;
+        }
+
+        .party-intro strong {
+            color: var(--deep-navy);
+        }
+
+        .party-title {
+            color: var(--deep-navy);
+            font-size: clamp(1.65rem, 3vw, 2.15rem);
+            letter-spacing: 1.2px;
+            margin-top: 58px;
+        }
+
+        .party-title::after,
+        .winner-title::after {
+            content: '';
+            width: 48px;
+            height: 3px;
+            background: var(--gold-leaf);
+            margin: 10px auto 0;
+        }
+
+        .day-label {
+            background: var(--deep-navy);
+            border-radius: 4px;
+            letter-spacing: 1.6px;
+        }
+
+        .day-heading .day-label {
+            background: #9a722e;
+        }
+
+        .photo-gallery,
+        .winner-grid,
+        .team-building-grid,
+        .quality-gallery {
+            gap: 22px;
+        }
+
+        /* Field Demonstration: balanced 2-by-2 college gallery */
+        .field-demo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1050px;
+            margin: 0 auto 65px;
+            align-items: stretch;
+        }
+
+        .field-demo-grid .photo-card {
+            width: 100%;
+        }
+
+        .photo-card,
+        .winner-card,
+        .quality-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #dce4ec;
+            box-shadow: 0 10px 25px rgba(16, 36, 58, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .photo-card:hover,
+        .winner-card:hover,
+        .quality-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(16, 36, 58, 0.14);
+        }
+
+        .photo-card img,
+        .winner-card img,
+        .quality-card img {
+            border-radius: 6px;
+            background: #e9eef4;
+        }
+
+        .photo-caption,
+        .winner-caption,
+        .quality-caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--deep-navy);
+        }
+
+        .winner-title {
+            color: #9a722e;
+            font-size: 1.8rem;
+        }
+
+        .winner-subcaption,
+        .quality-subcaption {
+            color: #718194;
+            letter-spacing: 0.8px;
+        }
+
+        .photo-subcaption {
+            color: #718194;
+            letter-spacing: 0.8px;
+        }
+
+        .party-divider {
+            width: 100%;
+            max-width: 140px;
+            height: 3px;
+            background: var(--gold-leaf);
+            margin: 75px auto;
+        }
+
+        .photo-credit {
+            border-top: 1px solid var(--line);
+            color: #718194;
+        }
+
+        .photo-credit strong {
+            color: var(--deep-navy);
+        }
+
+        footer {
+            padding: 65px 20px;
+            background: var(--deep-navy);
+            color: #c5d2df;
+            font-size: 0.76rem;
+            letter-spacing: 1.5px;
+            border-top: 4px solid var(--gold-leaf);
+        }
+
+        @media (max-width: 900px) {
+            .card { width: 340px; }
+        }
+
+        @media (max-width: 600px) {
+            header { padding: 56px 18px; }
+            h1 { font-size: 2.5rem; }
+            .sub { font-size: 0.68rem; letter-spacing: 1.5px; }
+            .content-container { padding: 18px 14px; }
+            h2 { font-size: 2rem; margin-top: 68px; }
+            .card { width: 100%; padding: 30px 20px; }
+            .party-title { font-size: 1.65rem; }
+            .photo-caption, .winner-caption, .quality-caption { font-size: 0.95rem; }
+            .field-demo-grid { grid-template-columns: 1fr; gap: 22px; margin-bottom: 45px; }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header>
+
+    <h1>
+        The Leadership Circle
+    </h1>
+
+    <p class="sub">
+        Iloilo State University of Fisheries Science and Technology
+    </p>
+
+</header>
+
+
+<div class="content-container">
+
+
+    <!-- =========================================
+         1. UNIVERSITY PRESIDENT
+         ========================================= -->
+
+    <section>
+
+        <h2>
+            Institutional Vision
+        </h2>
+
+
+        <div class="grid">
+
+            <div class="card" style="animation-delay: 0.1s;">
+
+                <span class="tag tag-univ">
+                    University Official
+                </span>
+
+
+                <img src="president.jpg"
+                     alt="Dr. Nordy D. Siason Jr.">
+
+
+                <p class="name">
+                    Dr. Nordy D. Siason Jr., EdD
+                </p>
+
+
+                <p class="title">
+                    University President
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Nordy D. Siason Jr. is the visionary first University
+                    President of ISUFST. Under his transformative leadership,
+                    the institution successfully navigated its historic
+                    transition into a full state university, setting a
+                    national benchmark for excellence and sustainable growth
+                    in higher education.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         2. CAMPUS ADMINISTRATION
+         ========================================= -->
+
+    <section>
+
+        <h2>
+            Campus Governance
+        </h2>
+
+
+        <div class="grid">
+
+            <div class="card" style="animation-delay: 0.2s;">
+
+                <span class="tag tag-camp">
+                    Campus Official
+                </span>
+
+
+                <img src="campusad.jpg"
+                     alt="Dr. Michael B. Dizon">
+
+
+                <p class="name">
+                    Dr. Michael B. Dizon, EdD
+                </p>
+
+
+                <p class="title">
+                    Campus Administrator
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Michael B. Dizon leads the San Enrique Campus with
+                    a focus on operational integrity and academic innovation.
+                    His dual role as the University Director of the Learning
+                    Assessment Center ensures that campus activities are
+                    aligned with international standards of educational
+                    excellence.
+
+                </div>
+
+            </div>
+
+
+            <div class="card" style="animation-delay: 0.3s;">
+
+                <span class="tag tag-camp">
+                    Administration
+                </span>
+
+
+                <img src="adminof.jpg"
+                     alt="Mrs. Melby P. Parreño">
+
+
+                <p class="name">
+                    Mrs. Melby P. Parreño
+                </p>
+
+
+                <p class="title">
+                    Administrative Officer VI
+                </p>
+
+
+                <div class="description-box">
+
+                    Mrs. Melby P. Parreño serves as the backbone of campus
+                    executive functions. Overseeing Human Resources and
+                    Financial Services, her strategic management ensures
+                    that the administrative framework seamlessly supports
+                    the academic goals of the students and faculty.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         3. COLLEGE DEANS
+         ========================================= -->
+
+    <section>
+
+        <h2>
+            The College Deans
+        </h2>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <span class="tag tag-dean">
+                    College Dean
+                </span>
+
+
+                <img src="dean.jpg"
+                     alt="Dr. Wenda D. Panes">
+
+
+                <p class="name">
+                    Dr. Wenda D. Panes
+                </p>
+
+
+                <p class="title">
+                    Dean, College of Informatics and Computing Innovations (CICI)
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Wenda D. Panes is a distinguished expert in IT and
+                    educational leadership. As the Dean of CICI, she champions
+                    digital transformation and curricula innovation. Her
+                    reputation as a certified regional quality assurance
+                    expert ensures that the college remains a leader in
+                    technology education.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-dean">
+                    College Dean
+                </span>
+
+
+                <img src="cbmsddean.jpg"
+                     alt="Dr. Janice H. Ching">
+
+
+                <p class="name">
+                    Dr. Janice H. Ching
+                </p>
+
+
+                <p class="title">
+                    Dean, College of Business, Management, and Sustainable Development (CBMSD)
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Janice H. Ching is a business scholar and educational
+                    leader serving as the OIC Campus Dean of CBMSD. She oversees
+                    academic administration for hospitality and management
+                    programs while spearheading localized research, community
+                    extensions, and international student internships.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-dean">
+                    College Dean
+                </span>
+
+
+                <img src="coagdean.jpg"
+                     alt="Dr. Noli L. Gerona">
+
+
+                <p class="name">
+                    Dr. Noli L. Gerona
+                </p>
+
+
+                <p class="title">
+                    Dean, College of Agriculture (COAG)
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Noli L. Gerona is an agricultural scientist and
+                    academic administrator. In his role, he leads the
+                    development of localized farming innovation and strategic
+                    partnerships with agencies like the DSWD to advance
+                    food security and biological farming controls on campus.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-dean">
+                    College Dean
+                </span>
+
+
+                <img src="eddean.jpg"
+                     alt="Dr. Rene T. Estomo">
+
+
+                <p class="name">
+                    Dr. Rene T. Estomo
+                </p>
+
+
+                <p class="title">
+                    Dean, College of Education (COED)
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Rene T. Estomo is an educational specialist managing
+                    the training, curricula, and professional deployment of
+                    pre-service teachers. He works alongside university-wide
+                    teams to direct foundational instruction and formative
+                    assessments to meet high-level institutional accreditation
+                    parameters.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         4. DISTINGUISHED FACULTY
+         ========================================= -->
+
+    <section>
+
+        <h2>
+            Distinguished CICI Faculty
+        </h2>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <span class="tag tag-faculty">
+                    Faculty
+                </span>
+
+
+                <img src="faculty1.jpg"
+                     alt="Dr. Weena J. Bulnes">
+
+
+                <p class="name">
+                    Dr. Weena J. Bulnes
+                </p>
+
+
+                <p class="title">
+                    IT Scholar &amp; Leader
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Weena J. Bulnes is a cornerstone of the CICI academic
+                    community. Her research in digital systems and her role
+                    as Secretary of the Teachers Association demonstrate her
+                    commitment to both scholarly advancement and institutional
+                    welfare.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-faculty">
+                    Faculty
+                </span>
+
+
+                <img src="faculty2.jpg"
+                     alt="Dr. Dythne P. Dacudao">
+
+
+                <p class="name">
+                    Dr. Dythne P. Dacudao
+                </p>
+
+
+                <p class="title">
+                    Senior Academic Expert
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Dythne P. Dacudao specializes in educational analytics
+                    and deep learning systems. Her leadership as the Business
+                    Manager of the Teachers Association highlights her
+                    versatile ability to manage both complex data and
+                    organizational finances.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-faculty">
+                    Faculty
+                </span>
+
+
+                <img src="faculty3.jpg"
+                     alt="Dr. Analiza G. Alingalan">
+
+
+                <p class="name">
+                    Dr. Analiza G. Alingalan
+                </p>
+
+
+                <p class="title">
+                    International Relations
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Analiza G. Alingalan bridges the university with the
+                    global community as the Linkages Coordinator. Her
+                    award-winning development of digital transformation
+                    projects has placed ISUFST at the forefront of regional
+                    technological growth.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-faculty">
+                    Faculty
+                </span>
+
+
+                <img src="faculty4.jpg"
+                     alt="Dr. Ian P. Sugatan">
+
+
+                <p class="name">
+                    Dr. Ian P. Sugatan
+                </p>
+
+
+                <p class="title">
+                    Data Science Specialist
+                </p>
+
+
+                <div class="description-box">
+
+                    Dr. Ian P. Sugatan serves as a Public Information Officer
+                    and a senior professor. His academic work in data science
+                    and management statistics provides the faculty with
+                    critical insights for evidence-based educational
+                    improvement.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-faculty">
+                    Faculty
+                </span>
+
+
+                <img src="faculty5.jpg"
+                     alt="Instr. Dave Allan A. Tagacay">
+
+
+                <p class="name">
+                    Instr. Dave Allan A. Tagacay
+                </p>
+
+
+                <p class="title">
+                    Hardware Innovator
+                </p>
+
+
+                <div class="description-box">
+
+                    Instr. Dave Allan A. Tagacay is recognized for his
+                    groundbreaking work in IoT and Smart Agriculture. His
+                    Master's expertise in Information Technology drives the
+                    college's hardware innovation and regional digital
+                    transformation projects.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-faculty">
+                    Faculty
+                </span>
+
+
+                <img src="faculty6.jpg"
+                     alt="Instr. Ivan Silvestre">
+
+
+                <p class="name">
+                    Instr. Ivan Silvestre
+                </p>
+
+
+                <p class="title">
+                    Software Engineer
+                </p>
+
+
+                <div class="description-box">
+
+                    Instr. Ivan Silvestre brings high-level software
+                    engineering expertise to the classroom. With a background
+                    in campus MIS management, he focuses on developing robust
+                    web architectures and modern digital data solutions.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         5. CICI SUPPORT CIRCLE
+         ========================================= -->
+
+    <section>
+
+        <h2>
+            CICI Support Circle
+        </h2>
+
+
+        <div class="grid">
+
+
+            <div class="card">
+
+                <span class="tag tag-staff">
+                    Staff
+                </span>
+
+
+                <img src="staff2.jpg"
+                     alt="Sir Jay Michael D. Borcillo">
+
+
+                <p class="name">
+                    Sir Jay Michael D. Borcillo
+                </p>
+
+
+                <p class="title">
+                    Infrastructure Support
+                </p>
+
+
+                <div class="description-box">
+
+                    Sir Jay Michael is the steward of the college's laboratory
+                    infrastructure. His technical precision and dedication
+                    to student data services ensure a high-quality learning
+                    environment for all computing students.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-staff">
+                    Staff
+                </span>
+
+
+                <img src="staff1.jpg"
+                     alt="Ma'am Andrea P. Delos Santos">
+
+
+                <p class="name">
+                    Ma'am Andrea P. Delos Santos
+                </p>
+
+
+                <p class="title">
+                    Office Operations
+                </p>
+
+
+                <div class="description-box">
+
+                    An alumna of the ISUFST BSIT program, Ma'am Andrea
+                    represents the pinnacle of community involvement and
+                    administrative dedication, providing essential support
+                    to the college's daily executive activities.
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="tag tag-staff">
+                    Staff
+                </span>
+
+
+                <img src="staff3.jpg"
+                     alt="Sir Dwayne A. Padernal">
+
+
+                <p class="name">
+                    Sir Dwayne A. Padernal
+                </p>
+
+
+                <p class="title">
+                    Administrative Assistant
+                </p>
+
+
+                <div class="description-box">
+
+                    A dynamic leader within the University Student Council,
+                    Sir Dwayne brings a developer's mindset to administrative
+                    support, assisting the college with operational tasks
+                    and technology-driven student initiatives.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         6. ACQUAINTANCE PARTY 2026
+         ========================================= -->
+
+    <section class="party-section" id="acquaintance-party">
+
+
+        <h2>
+            Acquaintance Party 2026
+        </h2>
+
+
+        <div class="party-intro">
+
+
+            <span class="day-label">
+                ICyMi • Colors of Unity '26
+            </span>
+
+
+            <p>
+
+                <strong>
+                    𝐈𝐂𝐘𝐌𝐈 | 𝐂𝐨𝐥𝐨𝐫𝐬 𝐨𝐟 𝐔𝐧𝐢𝐭𝐲 ’𝟐𝟔:
+                    𝐏𝐚𝐠-𝐚𝐛𝐢𝐚𝐛𝐢, 𝐏𝐚𝐠-𝐚𝐦𝐮𝐦𝐚, 𝐤𝐚𝐠 𝐏𝐚𝐠𝐬𝐚𝐮𝐥𝐨𝐠
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                A celebration of friendship, unity, teamwork, and school
+                spirit. Relive the unforgettable moments of the ISUFST
+                Acquaintance Party 2026 through these captured memories.
+
+            </p>
+
+        </div>
+
+
+        <!-- =========================================
+             DAY 1
+             ========================================= -->
+
+        <div class="day-heading">
+
+            <span class="day-label">
+                Day 1
+            </span>
+
+        </div>
+
+
+        <!-- =========================================
+             PARADE & STREET DANCE
+             ========================================= -->
+
+        <h3 class="party-title">
+            Parade &amp; Street Dance
+        </h3>
+
+
+        <div class="photo-gallery">
+
+
+            <div class="photo-card">
+
+                <img src="paradeccs2.jpg"
+                     alt="Day 1 Acquaintance Party parade photo 1"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Parade &amp; Street Dance
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Colors of Unity
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="parade.jpg"
+                     alt="Day 1 Acquaintance Party parade photo 2"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Together in Colors
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Pag-abiabi
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="paradeofcolors.jpg"
+                     alt="Day 1 Acquaintance Party street dance photo"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    A Colorful Celebration
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Unity in Every Step
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             FIELD DEMONSTRATION
+             5 PHOTOS
+             ========================================= -->
+
+        <h3 class="party-title">
+            Field Demonstration
+        </h3>
+
+
+        <div class="field-demo-grid">
+
+
+            <div class="photo-card">
+
+                <img src="prfcoed.jpg"
+                     alt="Field Demonstration - College of Education"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    College of Education
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Strength &amp; Coordination
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="prfagri.jpg"
+                     alt="Field Demonstration - College of Agriculture"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    College of Agriculture
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Pag-amuma
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="perfccs.jpg"
+                     alt="Field Demonstration - College of Informatics and Computing Innovations"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    College of Informatics and Computing Innovations
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Teamwork &amp; Discipline
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="perfhm.jpg"
+                     alt="Field Demonstration - College of Business, Management, and Sustainable Development"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    College of Business, Management, and Sustainable Development
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Strength &amp; Unity
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             FIELD DEMONSTRATION WINNERS
+             ========================================= -->
+
+        <h4 class="winner-title">
+            Field Demonstration Winners
+        </h4>
+
+
+        <!-- CHAMPION -->
+
+        <div class="champion-container">
+
+
+            <div class="winner-card champion-card">
+
+                <img src="ccs2.jpg"
+                     alt="Field Demonstration Champion"
+                     loading="lazy">
+
+
+                <div class="winner-caption">
+                    🏆 Champion | CICI
+                </div>
+
+
+                <div class="winner-subcaption">
+                    Field Demonstration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 1ST, 2ND, 3RD PLACE -->
+
+        <div class="winner-grid">
+
+
+            <div class="winner-card">
+
+                <img src="hm3.jpg"
+                     alt="Field Demonstration First Place"
+                     loading="lazy">
+
+
+                <div class="winner-caption">
+                    1st Place | CBMSD
+                </div>
+
+
+                <div class="winner-subcaption">
+                    Field Demonstration
+                </div>
+
+            </div>
+
+
+            <div class="winner-card">
+
+                <img src="ed.jpg"
+                     alt="Field Demonstration Second Place"
+                     loading="lazy">
+
+
+                <div class="winner-caption">
+                    2nd Place | BSED
+                </div>
+
+
+                <div class="winner-subcaption">
+                    Field Demonstration
+                </div>
+
+            </div>
+
+
+            <div class="winner-card">
+
+                <img src="agri.jpg"
+                     alt="Field Demonstration Third Place"
+                     loading="lazy">
+
+
+                <div class="winner-caption">
+                    3rd Place | BSA
+                </div>
+
+
+                <div class="winner-subcaption">
+                    Field Demonstration
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             TEAM BUILDING
+             2 X 2 GRID
+             ========================================= -->
+
+        <h3 class="party-title">
+            Team Building
+        </h3>
+
+
+        <div class="team-building-grid">
+
+
+            <div class="photo-card">
+
+                <img src="tb4.jpg"
+                     alt="Day 1 Team Building photo 1"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Team Building
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Stronger Together
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="tb2.jpg"
+                     alt="Day 1 Team Building photo 2"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Building Connections
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Friendship &amp; Trust
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="tb.jpg"
+                     alt="Day 1 Team Building photo 3"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Teamwork &amp; Unity
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Together We Achieve More
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="tb5.jpg"
+                     alt="Day 1 Team Building photo 4"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Memories Together
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Pag-saulog
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <hr class="party-divider">
+
+
+        <!-- =========================================
+             DAY 2
+             ========================================= -->
+
+        <div class="day-heading">
+
+            <span class="day-label">
+                Day 2
+            </span>
+
+        </div>
+
+
+        <!-- =========================================
+             THE SEARCH
+             5 PHOTOS
+             ========================================= -->
+
+        <h3 class="party-title">
+             Search
+        </h3>
+
+
+        <div class="photo-gallery">
+
+
+            <div class="photo-card">
+
+                <img src="com.jpg"
+                     alt="Day 2 Acquaintance Party search photo 1"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    The Search 2026
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Confidence &amp; Character
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="searchcss2.jpg"
+                     alt="Day 2 Acquaintance Party search photo 2"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Colors of Unity
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Celebrating Every Talent
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="ed1.jpg"
+                     alt="Day 2 Acquaintance Party search photo 3"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Celebrating Excellence
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Grace &amp; Confidence
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="agris.jpg"
+                     alt="Day 2 Acquaintance Party search photo 4"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    Shining on Stage
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Talent &amp; Personality
+                </div>
+
+            </div>
+
+
+            <div class="photo-card">
+
+                <img src="whole.jpg"
+                     alt="Day 2 Acquaintance Party search photo 5"
+                     loading="lazy">
+
+
+                <div class="photo-caption">
+                    A Night to Remember
+                </div>
+
+
+                <div class="photo-subcaption">
+                    Colors of Unity '26
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- =========================================
+             PHOTO CREDIT
+             ========================================= -->
+
+        <div class="photo-credit">
+
+            Photo Credits to
+            <strong>Igang Publication</strong>
+
+        </div>
+
+
+    </section>
+
+</div>
+
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+
+<footer>
+
+    Designed for Excellence
+
+    <br>
+
+    &copy; 2026 Iloilo State University of Fisheries Science and Technology
+
+    <br>
+
+    <span style="letter-spacing: 1px; text-transform: none;">
+        Celebrating Leadership, Friendship, and Unity
+    </span>
+
+</footer>
+
+
+</body>
+</html>
